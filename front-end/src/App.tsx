@@ -7,9 +7,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { lazy, Suspense } from "react";
 const NoPage = lazy(() => import("./pages/no-page/NoPage"));
-const Contact = lazy(() => import("./pages/contact/Contact"));
+const Blog = lazy(() => import("./pages/blog/Blog"));
 const Login = lazy(() => import("./pages/login/Login"));
 const Home = lazy(() => import("./pages/home/Home"));
+const About = lazy(() => import("./pages/about-me/About"));
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,8 +20,8 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            {/* <Route path="blogs" element={<Blogs />} /> */}
-            <Route path="contact" element={<Contact />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
